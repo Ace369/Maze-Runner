@@ -13,7 +13,7 @@ class Trap{
         var pos = this.body.position;
         push();
         noStroke(0);
-        fill(170);
+        fill(45, 195, 195);
         rectMode(CENTER); 
         rect(pos.x, pos.y, this.width, this.height);
         pop ();
