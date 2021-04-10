@@ -1,7 +1,8 @@
 class Trap{
     constructor(x, y) {
         var options = {
-            isStatic: true
+            //isStatic: true
+            restitution: 2.0
         }
         this.body = Bodies.rectangle(x, y, 20, 20, options);
         this.width = 20;
@@ -13,7 +14,8 @@ class Trap{
         var pos = this.body.position;
         push();
         noStroke(0);
-        fill(45, 195, 195);
+        // fill(255, 0, 0)
+        fill(10, 165, 225);
         rectMode(CENTER); 
         rect(pos.x, pos.y, this.width, this.height);
         pop ();
