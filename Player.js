@@ -6,7 +6,7 @@ class Player{
             density: 0.5
             //isSensor: true
         }
-        this.body = Bodies.rectangle(900, 475, 100, 100, options);
+        this.body = Bodies.rectangle(900, 475, 90, 90, options);
         this.width = 100;
         this.height = 100;
         this.image = loadImage("player.png")
@@ -27,7 +27,7 @@ class Player{
         var angle = this.body.angle;
         push();
         translate(pos.x, pos.y);
-        rotate(angle);
+        //rotate(angle);
         imageMode(CENTER); 
         image(this.image, 0, 0, this.width, this.height);
         pop ();

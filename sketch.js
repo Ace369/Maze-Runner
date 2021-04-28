@@ -7,7 +7,7 @@ var block4, block5, block6;
 var block7, block8, block9;
 var block10, block11, block12;
 var block13, block14, block15;
-var trap1;
+var trap1, trap2, trap3;
 
 
 function preload(){
@@ -22,7 +22,10 @@ function setup() {
   
   player = new Player();
   treasure = new Treasure();
-  trap1 = new Trap(500, 500);
+  
+  trap1 = new Trap(600, 500);
+  trap2 = new Trap(400, 200);
+  trap3 = new Trap(250, 300);
 
   //Outer walls
   block1 = new Maze(500, 100, 900, 50);
@@ -46,7 +49,7 @@ function setup() {
 
   //
   block13 = new Maze(850, 585, 200, 20);
-  block14 = new Maze(750, 525, 20, 450);
+  block14 = new Maze(750, 550, 20, 400);
   block15 = new Maze(950, 750, 50, 350);
 
 
@@ -57,7 +60,10 @@ function draw() {
   
   player.display();
   treasure.display();
+
   trap1.display();
+  trap2.display();
+  trap3.display();
 
   block1.display();
   block2.display();
@@ -79,6 +85,20 @@ function draw() {
   block14.display();
   block15.display();
 
+  text(mouseX + " , " + Math.round(mouseY), mouseX, mouseY)
+
+  // if(trap1.x > 700) {
+  //   // trap1.x = 500;
+  //   Matter.Body.setPosition(trap1, {x: 500, y: 500})
+  // }
+  // else  if(trap2.x > 700) {
+  //   // trap2.x = 500;
+  //   Matter.Body.setPosition(trap2, {x: 500, y: 200})
+  // }
+  // else  if(trap3.x > 700) {
+  //   // trap3.x = 500;
+  //   Matter.Body.setPosition(trap3, {x: 200, y: 300})
+  // }
 
   // if(480 < player.body.x < 520 && 480 < player.body.y < 520) {
   //   console.log(player.body.x + "," + player.body.y)
@@ -97,3 +117,5 @@ function mouseDragged() {
   Matter.Body.setPosition(player.body, {x: mouseX, y: mouseY});
 
 }
+
+  
